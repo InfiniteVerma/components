@@ -65,10 +65,11 @@ Logger::writeLog(string log, LogLevel logLevel)
         logPtr << log << "\n";
 }
 
+template<typename T>
 class CircularBuffer {
     private:
         ssize_t size;
-        int* array;
+        T* array;
         int writePtr;
         int readPtr;
         Logger* logger;
@@ -78,14 +79,12 @@ class CircularBuffer {
         CircularBuffer() = delete;
         ~CircularBuffer();
 
-        void writeData(int data);
+        void writeData(T data);
         int readData();
 
         void debugRead();
 
         int getSize();
-
-        void write(int data);
 };
 
 CircularBuffer::CircularBuffer(ssize_t s)
@@ -96,7 +95,7 @@ CircularBuffer::CircularBuffer(ssize_t s)
         assert(1);
     }
     size = s;
-    array = new int[s];
+    array = new T[s];
     readPtr = 0;
     writePtr = 0;
 
