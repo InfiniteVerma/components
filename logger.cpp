@@ -87,6 +87,6 @@ Logger::writeLog(string log, LogLevel logLevel)
 
     if(!isDebugLog || (isDebugLog && isDebugMode))
         getLogFile() << log << "\n";
+
+    getLogFile().flush();
 }
-
-
