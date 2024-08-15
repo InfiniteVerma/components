@@ -17,7 +17,7 @@ class CircularBuffer {
         int writePtr;
         int readPtr;
         Logger* logger;
-        mutex bufMutex;
+        std::mutex bufMutex;
 
     public:
         CircularBuffer(ssize_t);

@@ -1,4 +1,5 @@
 #include "circularbuffer.h"
+using namespace std;
 
 CircularBuffer::CircularBuffer(ssize_t s)
 {
