@@ -4,7 +4,6 @@
 #include <iostream>
 #include <memory>
 
-using namespace std;
 enum LogLevel {
     INFO = 1,
     DEBUG = 2,
@@ -12,22 +11,21 @@ enum LogLevel {
 
 class Logger {
     private:
-        unique_ptr<ofstream> logPtr1;
-        unique_ptr<ofstream> logPtr2;
-        unique_ptr<ofstream>* currLogPtr;
+        std::unique_ptr<std::ofstream> logPtr1;
+        std::unique_ptr<std::ofstream> logPtr2;
+        std::unique_ptr<std::ofstream>* currLogPtr;
 
         bool isDebugMode;
         int maxFileSize;
-        string logFileName;
+        std::string logFileName;
     public:
-        Logger(string);
+        Logger(std::string);
         ~Logger();
 
-        ofstream& getLogFile();
+        std::ofstream& getLogFile();
         void checkLogRollover();
 
-        void writeLog(string log, LogLevel logLevel = INFO);
+        void writeLog(std::string log, LogLevel logLevel = INFO);
 };
-
 
 #endif
