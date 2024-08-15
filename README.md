@@ -5,9 +5,12 @@ Just a project to help me learn.
 
 #### Todo
 
+V0
+ - [x] Basic logger file
+ - [x] Makefile, build a .so file
+
 V1
- - [ ] Makefile, build a .so file
- - [ ] Ring buffer
+ - [x] Ring buffer
  - [ ] Add tests
  - [ ] Make it thread safe
  - Uses: TCP, logger
