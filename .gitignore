@@ -1,3 +1,6 @@
 a.out
 log
 *.log
+*.o
+*.so
+sampleRunner
